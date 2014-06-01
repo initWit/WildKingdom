@@ -24,6 +24,7 @@
 		668A90D6193959EE008574DD /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A90D5193959EE008574DD /* Photo.m */; };
 		668A90D9193967EB008574DD /* PhotoDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A90D8193967EB008574DD /* PhotoDataManager.m */; };
 		668A90DC193A0766008574DD /* PhotoCustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A90DB193A0765008574DD /* PhotoCustomCollectionViewCell.m */; };
+		66EF0367193B62C800A1D0E4 /* DetailPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EF0366193B62C800A1D0E4 /* DetailPhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		668A90D8193967EB008574DD /* PhotoDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDataManager.m; sourceTree = "<group>"; };
 		668A90DA193A0765008574DD /* PhotoCustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCustomCollectionViewCell.h; sourceTree = "<group>"; };
 		668A90DB193A0765008574DD /* PhotoCustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCustomCollectionViewCell.m; sourceTree = "<group>"; };
+		66EF0365193B62C700A1D0E4 /* DetailPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPhotoViewController.h; sourceTree = "<group>"; };
+		66EF0366193B62C800A1D0E4 /* DetailPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				668A906819391914008574DD /* AppDelegate.h */,
 				668A906919391914008574DD /* AppDelegate.m */,
 				668A906B19391914008574DD /* Main.storyboard */,
+				66EF0365193B62C700A1D0E4 /* DetailPhotoViewController.h */,
+				66EF0366193B62C800A1D0E4 /* DetailPhotoViewController.m */,
 				668A90D7193967EB008574DD /* PhotoDataManager.h */,
 				668A90D8193967EB008574DD /* PhotoDataManager.m */,
 				668A90D4193959EE008574DD /* Photo.h */,
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				668A90D9193967EB008574DD /* PhotoDataManager.m in Sources */,
+				66EF0367193B62C800A1D0E4 /* DetailPhotoViewController.m in Sources */,
 				668A90D6193959EE008574DD /* Photo.m in Sources */,
 				668A907019391914008574DD /* ViewController.m in Sources */,
 				668A906A19391914008574DD /* AppDelegate.m in Sources */,
@@ -473,6 +479,7 @@
 				668A908A19391914008574DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		668A908B19391914008574DD /* Build configuration list for PBXNativeTarget "WildKingdomTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +488,7 @@
 				668A908D19391914008574DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,6 +10,7 @@
 
 @interface Photo : NSObject
 
+@property UIImage *photoThumbnailImage;
 @property UIImage *photoImage;
 @property NSString *photoAnimalCategory;
 @property NSString *photographer;

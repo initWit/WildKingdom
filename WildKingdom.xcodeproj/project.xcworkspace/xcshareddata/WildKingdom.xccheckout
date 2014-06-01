@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E7D7E708-2832-421F-ACBF-427D05E72694</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WildKingdom</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5E7192A2-B497-404F-8D2D-50397113F6F4</key>
+		<string>https://github.com/initWit/WildKingdom.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WildKingdom.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5E7192A2-B497-404F-8D2D-50397113F6F4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/initWit/WildKingdom.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5E7192A2-B497-404F-8D2D-50397113F6F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5E7192A2-B497-404F-8D2D-50397113F6F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WildKingdom</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -13,8 +13,8 @@
 
 - (void) getArrayOfPhotoObjectsforTheSearchTerm: (NSString *)searchTerm
 {
-    NSMutableArray *arrayOfPhotoURLs = [[NSMutableArray alloc] init];
-    NSMutableArray *arrayOfPhotoImages = [[NSMutableArray alloc] init];
+//    NSMutableArray *arrayOfPhotoURLs = [[NSMutableArray alloc] init];
+//    NSMutableArray *arrayOfPhotoImages = [[NSMutableArray alloc] init];
     NSMutableArray *arrayOfPhotoObjects = [[NSMutableArray alloc] init];
 
     NSString *urlConcatenatedString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=de8633ef359f7d429bada6a2c88e42b0&text=%@&per_page=10&format=json&nojsoncallback=1", searchTerm];
@@ -37,12 +37,14 @@
             NSString *server = [eachPhotoDictionary objectForKey:@"server"];
             NSString *photoId = [eachPhotoDictionary objectForKey:@"id"];
             NSString *secret = [eachPhotoDictionary objectForKey:@"secret"];
-            NSString *httpString = [NSString stringWithFormat:@"http://farm%@.staticflickr.com/%@/%@_%@_t.jpg", farm,server,photoId,secret];
-            [arrayOfPhotoURLs addObject:httpString];
+            NSString *httpThumbnailString = [NSString stringWithFormat:@"http://farm%@.staticflickr.com/%@/%@_%@_t.jpg", farm,server,photoId,secret];
+            NSURL *photoThumbnailURL = [NSURL URLWithString:httpThumbnailString];
+            UIImage *photoThumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:photoThumbnailURL]];
+            photoObject.photoThumbnailImage = photoThumbnailImage;
+            NSString *httpString = [NSString stringWithFormat:@"http://farm%@.staticflickr.com/%@/%@_%@_m.jpg", farm,server,photoId,secret];
             NSURL *photoURL = [NSURL URLWithString:httpString];
             UIImage *photoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:photoURL]];
             photoObject.photoImage = photoImage;
-            [arrayOfPhotoImages addObject:photoImage];
             photoObject.photoTitle = [eachPhotoDictionary objectForKey:@"title"];
             photoObject.photographer = [eachPhotoDictionary objectForKey:@"owner"];
             [arrayOfPhotoObjects addObject:photoObject];
@@ -51,7 +53,6 @@
         [self.delegate photoDataManagerDidFinishGettingPhotos:arrayOfPhotoObjects];
     }];
 }
-
 
 
 @end

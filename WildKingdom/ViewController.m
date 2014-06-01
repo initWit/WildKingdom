@@ -10,12 +10,14 @@
 #import "PhotoDataManager.h"
 #import "Photo.h"
 #import "PhotoCustomCollectionViewCell.h"
+#import "DetailPhotoViewController.h"
 
 @interface ViewController () <PhotoDataManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property NSMutableArray *photoObjectsArray;
 @property PhotoDataManager *photoDataManager;
 @property UICollectionViewFlowLayout *layout;
+//@property Photo *selectedPhotoObject;
 @end
 
 @implementation ViewController
@@ -28,7 +30,7 @@
     self.photoDataManager.delegate = self;
     if ([self.title isEqualToString:@"Lions"])
     {
-        [self.photoDataManager getArrayOfPhotoObjectsforTheSearchTerm:@"lions,wild,animals"];
+        [self.photoDataManager getArrayOfPhotoObjectsforTheSearchTerm:@"lion,wild"];
     }
     else if ([self.title isEqualToString:@"Tigers"])
     {
@@ -103,7 +105,7 @@
     PhotoCustomCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
     Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
-    cell.photoCellImageView.image = currentPhotoObject.photoImage;
+    cell.photoCellImageView.image = currentPhotoObject.photoThumbnailImage;
     return cell;
 }
 
@@ -118,18 +120,22 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: Select Item
+//    self.selectedPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
+//    NSLog(@"didSelectItem");
+
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
+//    PhotoCustomCollectionViewCell *deselectedCell = (PhotoCustomCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+//    NSLog(@"deselectedCell %@", deselectedCell);
 }
 
 #pragma mark – UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
-    CGSize retval = currentPhotoObject.photoImage.size.width > 0 ? currentPhotoObject.photoImage.size : CGSizeMake(100, 100);
+    CGSize retval = currentPhotoObject.photoThumbnailImage.size.width > 0 ? currentPhotoObject.photoThumbnailImage.size : CGSizeMake(100, 100);
     retval.height += 25; retval.width += 25;
 
     return retval;
@@ -138,6 +144,13 @@
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(50, 20, 50, 20);
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DetailPhotoViewController *nextVC = segue.destinationViewController;
+    NSIndexPath *indexPathOfSelectedPhoto = [self.collectionView indexPathsForSelectedItems][0];
+    nextVC.photoObject = [self.photoObjectsArray objectAtIndex:indexPathOfSelectedPhoto.row];
 }
 
 @end
