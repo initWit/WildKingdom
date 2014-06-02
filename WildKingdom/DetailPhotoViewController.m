@@ -26,7 +26,7 @@
     self.titleLabel.text= self.photoObject.photoTitle;
     self.ownerLabel.text = self.photoObject.photographer;
     self.infoLabel.text = self.photoObject.photoAnimalCategory;
-    self.infoView.alpha = 1.0;
+    self.infoView.alpha = 0.0;
 }
 
 - (IBAction)imageTapped:(id)sender

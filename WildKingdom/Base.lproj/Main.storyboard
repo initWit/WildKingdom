@@ -109,7 +109,7 @@
                                             <outletCollection property="gestureRecognizers" destination="Hih-YC-hkC" appends="YES" id="e3F-9g-KQG"/>
                                         </connections>
                                     </imageView>
-                                    <view alpha="0.64999999999999969" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrM-XA-KF7" userLabel="Info View">
+                                    <view alpha="0.64999999999999969" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrM-XA-KF7" userLabel="Info View">
                                         <rect key="frame" x="0.0" y="384" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -158,6 +158,9 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="mvl-t0-WoM"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -318,7 +321,7 @@
                                     <outletCollection property="gestureRecognizers" destination="giT-85-sXY" appends="YES" id="XVb-TX-E33"/>
                                 </connections>
                             </imageView>
-                            <view alpha="0.64999997615814209" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7K-ck-LpR" userLabel="Info View">
+                            <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7K-ck-LpR" userLabel="Info View">
                                 <rect key="frame" x="0.0" y="448" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -367,6 +370,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="tJE-pk-5Kj"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -497,7 +503,7 @@
                                     <outletCollection property="gestureRecognizers" destination="HSo-pT-I0W" appends="YES" id="v0N-aA-Qn5"/>
                                 </connections>
                             </imageView>
-                            <view alpha="0.64999997615814209" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tKN-nx-cZm" userLabel="Info View">
+                            <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKN-nx-cZm" userLabel="Info View">
                                 <rect key="frame" x="0.0" y="448" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -546,6 +552,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="MTo-Qg-Aij"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.70990114800000004" green="0.35649447420000002" blue="0.001468256273" alpha="1" colorSpace="calibratedRGB"/>
