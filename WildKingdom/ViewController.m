@@ -18,6 +18,7 @@
 @property PhotoDataManager *photoDataManager;
 @property UICollectionViewFlowLayout *layout;
 //@property Photo *selectedPhotoObject;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end
 
 @implementation ViewController
@@ -42,6 +43,7 @@
     }
     self.layout = (UICollectionViewFlowLayout *)[self.collectionView collectionViewLayout];
 
+    [self.activityIndicator startAnimating];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -61,6 +63,11 @@
 
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
@@ -75,7 +82,6 @@
         self.layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.layout.minimumLineSpacing = 1000.0;
     }
-
 }
 
 #pragma mark - PhotoDataManagerDelegate
@@ -87,6 +93,7 @@
         [self.photoObjectsArray addObject:eachPhoto];
     }
     [self.collectionView reloadData];
+    [self.activityIndicator stopAnimating];
 }
 
 #pragma mark - UICollectionView Datasource
@@ -103,7 +110,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PhotoCustomCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
     Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
     cell.photoCellImageView.image = currentPhotoObject.photoThumbnailImage;
     return cell;
@@ -122,13 +129,12 @@
 {
 //    self.selectedPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
 //    NSLog(@"didSelectItem");
-
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
     // TODO: Deselect item
-//    PhotoCustomCollectionViewCell *deselectedCell = (PhotoCustomCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-//    NSLog(@"deselectedCell %@", deselectedCell);
+
 }
 
 #pragma mark – UICollectionViewDelegateFlowLayout
@@ -143,7 +149,7 @@
 
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(50, 20, 50, 20);
+    return UIEdgeInsetsMake(20,25,20,25);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
